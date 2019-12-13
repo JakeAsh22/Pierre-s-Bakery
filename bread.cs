@@ -26,7 +26,14 @@ namespace BreadCalc
         }
         else 
         {
-            return (bread*(_breadAmt-1))/2+bread;
+            if ((_breadAmt-1) % 3 == 0)
+            {
+                return (bread*(_breadAmt-1))-((_breadAmt/3)*bread)+bread;
+            }
+            else
+            {
+                return (bread*(_breadAmt-2))-((_breadAmt/3)*bread)+(bread*2);
+            }
         }
     }
  }   
