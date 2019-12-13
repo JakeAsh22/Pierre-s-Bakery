@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using Calc;
 namespace BreadCalc;
 {
  class Bread
