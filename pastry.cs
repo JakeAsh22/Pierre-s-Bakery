@@ -19,6 +19,17 @@ namespace PastryCalc;
             {
                 return (_pastryAmt/3)*5;
             }
+            else 
+            {
+                if ((_pastryAmt-1) % 3 == 0)
+                {
+                    return ((_pastryAmt-1)/3)*5+pastry;
+                }
+                else if ((_pastryAmt-2) % 3 == 0)
+                {
+                    return ((_pastryAmt-1)/3)*5+(pastry*2);
+                }
+            }
         }
     }
     
