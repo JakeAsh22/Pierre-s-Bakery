@@ -16,13 +16,13 @@ namespace BreadCalc
     {
         int bread = 5;
 
-        if (_breadAmt % 2 == 0)
+        if (_breadAmt % 3 == 0)
         {
-            return (bread*_breadAmt)/2;
+            return (bread*_breadAmt)-((_breadAmt/3)*bread);
         }
-        else if (_breadAmt == 1)
+        else if (_breadAmt<3)
         {
-            return bread;
+            return bread*_breadAmt;
         }
         else 
         {
