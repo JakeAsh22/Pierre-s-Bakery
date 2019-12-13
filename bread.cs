@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Calc;
-namespace BreadCalc;
+namespace BreadCalc
 {
  class Bread
  {
@@ -19,6 +19,10 @@ namespace BreadCalc;
         if (_breadAmt % 2 == 0)
         {
             return (bread*_breadAmt)/2;
+        }
+        else if (_breadAmt == 1)
+        {
+            return bread;
         }
         else 
         {
