@@ -20,10 +20,12 @@ namespace StartProgram
             bool pastryConvert = int.TryParse(pastry, out pastryNum);
             if (breadConvert && pastryConvert && breadNum>=0 && pastryNum>=0)
             {
-                Bread userBread = new Bread(breadNum);
-                Pastry userPastry = new Pastry(pastryNum);
-                Console.WriteLine("\nThe total cost for bread is: $"+userBread.BreadCost()+".  The total cost for the pastries is: $"+userPastry.PastryCost());
-                Console.WriteLine("Your Total is: $"+(userPastry.PastryCost()+userBread.BreadCost()));
+                Bread userBread = new Bread();
+                userBread.SetBread(breadNum);
+                Pastry userPastry = new Pastry();
+                userPastry.SetPastry(pastryNum);
+                Console.WriteLine("\nThe total cost for bread is: $"+userBread.GetBreadCost()+".  The total cost for the pastries is: $"+userPastry.GetPastryCost());
+                Console.WriteLine("Your Total is: $"+(userPastry.GetPastryCost()+userBread.GetBreadCost()));
             }
             else 
                 Console.WriteLine("Please enter only whole numbers that are at least 0");

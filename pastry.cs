@@ -6,35 +6,43 @@ namespace PastryCalc
     class Pastry
     {
         private int _pastryAmt;
+        private int _cost = 0;
 
-        public Pastry (int pastryAmt)
-        {
-            _pastryAmt = pastryAmt;
-        }
-
-        public int PastryCost()
+        private void PastryCost()
         {
             int pastry = 2;
             if (_pastryAmt % 3 == 0)
             {
-                return (_pastryAmt/3)*5;
+                _cost = (_pastryAmt/3)*5;
             }
             else if (_pastryAmt<3)
             {
-                return pastry*_pastryAmt;
+                _cost = pastry*_pastryAmt;
             }
             else 
             {
                 if ((_pastryAmt-1) % 3 == 0)
                 {
-                    return ((_pastryAmt-1)/3)*5+pastry;
+                    _cost = ((_pastryAmt-1)/3)*5+pastry;
                 }
                 else 
                 {
-                    return ((_pastryAmt-1)/3)*5+(pastry*2);
+                    _cost = ((_pastryAmt-1)/3)*5+(pastry*2);
                 }
             }
         }
+
+        public int GetPastryCost()
+        {
+            PastryCost();
+            return _cost;
+        }
+
+        public void SetPastry(int pastryAmt)
+        {
+             _pastryAmt = pastryAmt;
+        }
+
     }
     
 }

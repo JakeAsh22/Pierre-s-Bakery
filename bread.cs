@@ -6,35 +6,42 @@ namespace BreadCalc
  class Bread
  {
     private int _breadAmt;
-
-    public Bread (int breadAmt)
-    {
-        _breadAmt = breadAmt;
-    }   
-
-    public int BreadCost()
+    private int _cost = 0;
+    
+    private void BreadCost()
     {
         int bread = 5;
-
+        
         if (_breadAmt % 3 == 0)
         {
-            return (bread*_breadAmt)-((_breadAmt/3)*bread);
+            _cost =  (bread*_breadAmt)-((_breadAmt/3)*bread);
         }
         else if (_breadAmt<3)
         {
-            return bread*_breadAmt;
+            _cost =  bread*_breadAmt;
         }
         else 
         {
             if ((_breadAmt-1) % 3 == 0)
             {
-                return (bread*(_breadAmt-1))-((_breadAmt/3)*bread)+bread;
+                _cost = (bread*(_breadAmt-1))-((_breadAmt/3)*bread)+bread;
             }
             else
             {
-                return (bread*(_breadAmt-2))-((_breadAmt/3)*bread)+(bread*2);
+                _cost = (bread*(_breadAmt-2))-((_breadAmt/3)*bread)+(bread*2);
             }
         }
+    }
+
+    public int GetBreadCost()
+    {
+        BreadCost();
+        return _cost;
+    }
+
+    public void SetBread(int breadAmt)
+    {
+        _breadAmt = breadAmt;
     }
  }   
 }
